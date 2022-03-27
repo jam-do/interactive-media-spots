@@ -43,14 +43,13 @@ export const TPL = /*html*/ `
     opacity: 0;
     pointer-events: none;
   }
-  #canvas-el {
+  canvas {
     box-sizing: border-box;
     transition: 0.1s;
     height: 100%;
     width: 100%;
     object-fit: contain;
   }
-
   .sensor {
     position: absolute;
     top: 0;

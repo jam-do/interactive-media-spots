@@ -40,7 +40,6 @@ export class PhotoSpinner extends BaseComponent {
 
   _setConfig(cfg) {
     if (!cfg) {
-      console.log(cfg);
       return;
     }
     if (!this['config']) {
