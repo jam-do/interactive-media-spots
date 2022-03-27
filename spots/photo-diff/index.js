@@ -1,6 +1,6 @@
 import { BaseComponent } from '../../submodules/symbiote/core/BaseComponent.js';
 
-export class PpCompare extends BaseComponent {
+export class PhotoDiff extends BaseComponent {
 
   renderShadow = true;
 
@@ -88,7 +88,7 @@ export class PpCompare extends BaseComponent {
 
 }
 
-PpCompare.template = /*html*/ `
+PhotoDiff.template = /*html*/ `
 <style>
   :host {
     position: relative;
@@ -111,5 +111,5 @@ PpCompare.template = /*html*/ `
 </style>
 <canvas id="canvas-el"></canvas>
 `;
-PpCompare.reg('pp-compare');
+PhotoDiff.reg('ims-photo-diff');
 
