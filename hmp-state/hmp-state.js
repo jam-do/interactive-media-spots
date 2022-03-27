@@ -16,9 +16,8 @@ export class HmpStateSchema {
 
 export class HmpStateDescriptor {
   /**
-   *
    * @param {Object} src
-   * @param {HmPlayer} src.hmpElement
+   * @param {unknown} src.hmpElement
    */
   constructor(src) {
     this.uid = UID.generate();
@@ -73,8 +72,8 @@ export class HmpState {
   }
 
   /**
-   *
-   * @param {HmPlayer} hmpInstance
+   * @template {import('../submodules/symbiote/core/BaseComponent.js').BaseComponent} T
+   * @param {T} hmpInstance
    */
   static register(hmpInstance) {
     let state = new HmpStateDescriptor({
