@@ -1,9 +1,9 @@
 import { BaseComponent } from '../../submodules/symbiote/core/BaseComponent.js';
 import { UID } from '../../submodules/symbiote/utils/UID.js';
-import { ImageReader } from '../../common/image-reader.js';
-import { } from '../../common/hmp-toolbar-el.js';
-import { } from '../../common/hmp-progress-bar-el.js';
-import { } from '../../common/hmp-info-bar-el.js';
+import { ImageReader } from '../../lib/image-reader.js';
+import { } from '../../lib/hmp-toolbar-el.js';
+import { } from '../../lib/hmp-progress-bar-el.js';
+import { } from '../../lib/hmp-info-bar-el.js';
 
 export class PpSpinner extends BaseComponent {
 

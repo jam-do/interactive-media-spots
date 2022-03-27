@@ -9,6 +9,7 @@
   "author": "alex.sova@pm.me",
   "license": "MIT",
   "devDependencies": {
+    "esbuild": "^0.14.28",
     "typescript": "^4.6.3"
   }
 }

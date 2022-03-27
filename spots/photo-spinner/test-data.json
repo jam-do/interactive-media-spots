@@ -1,5 +1,4 @@
 {
-  "approved": true,
   "autoplay": true,
   "created": 1552853100450,
   "customBtn": {
@@ -16,7 +15,6 @@
   "isCycled": true,
   "logoUrl": "",
   "motionBlur": false,
-  "owner": "Wqwl1TrkAuUnulngf9Uy79BqP8F2",
   "placeholderUrl": "",
   "showPlaceholder": false,
   "speed": 50,
@@ -131,10 +129,5 @@
     "color": "rgb(40, 39, 48)"
   },
   "title": "PHOTO-SPINNER TEST",
-  "type": "spinner",
-  "viewIn": {
-    "feed": true,
-    "portfolio": true,
-    "showcase": true
-  }
+  "type": "spinner"
 }

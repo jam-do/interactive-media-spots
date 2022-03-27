@@ -1,7 +1,7 @@
 import { BaseComponent } from './submodules/symbiote/core/BaseComponent.js';
 
 import { HmpState } from './hmp-state/hmp-state.js';
-import { HmpFullscreen } from './common/fullscreen.js';
+import { HmpFullscreen } from './lib/fullscreen.js';
 HmpFullscreen.init();
 
 import { } from './types/spinner/hmp-spinner.js';
