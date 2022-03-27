@@ -2,8 +2,14 @@ import { BaseComponent } from '../../submodules/symbiote/core/BaseComponent.js';
 import { UID } from '../../submodules/symbiote/utils/UID.js';
 import { ImageReader } from '../../lib/image-reader.js';
 import { TPL } from './template.js';
-import { HmpState } from '../../hmp-state/hmp-state.js';
+import { HmpState } from '../../lib/ims-state.js';
 import { HmpFullscreen } from '../../lib/fullscreen.js';
+HmpFullscreen.init();
+
+import { IconMkp } from '../../lib/ims-icon.js';
+import { HM_ICONS } from '../../lib/ims-iconset.js';
+IconMkp.addIcons(HM_ICONS);
+
 import { } from '../../lib/hmp-toolbar-el.js';
 import { } from '../../lib/hmp-progress-bar-el.js';
 import { } from '../../lib/hmp-info-bar-el.js';
@@ -40,7 +46,6 @@ export class PhotoSpinner extends BaseComponent {
     if (!this['config']) {
       this['config'] = cfg;
     }
-    console.log(cfg)
     this._imgHeight = cfg.imgHeight || 480;
     this._imgWidth = cfg.imgWidth || 640;
 
@@ -433,4 +438,4 @@ PhotoSpinner.bindAttributes({
 });
 
 PhotoSpinner.template = TPL;
-PhotoSpinner.reg('photo-spinner');
+PhotoSpinner.reg('ims-photo-spinner');

@@ -1,8 +1,9 @@
 {
-  "name": "spin-player",
+  "name": "@jam-do/ims",
   "version": "0.0.1",
-  "description": "",
+  "description": "Interactive Media Spots",
   "main": "index.js",
+  "module": "index.js",
   "scripts": {
     "test": "test"
   },

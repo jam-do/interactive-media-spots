@@ -1,0 +1,1 @@
+export { PhotoSpinner } from './spots/photo-spinner/index.js';
