@@ -3,9 +3,28 @@
   "version": "0.0.1",
   "description": "Interactive Media Spots",
   "main": "index.js",
+  "type": "module",
   "module": "index.js",
+  "sideEffects": false,
+  "files": [
+    "lib/*",
+    "spots/*",
+    "submodules/*",
+    "utils/*",
+    "web/*",
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/jam-do/interactive-media-spots/",
   "scripts": {
-    "test": "test"
+    "sym": "git submodule add -b main https://github.com/symbiotejs/symbiote.js submodules/symbiote",
+    "update_submodules": "git submodule update --init --recursive --remote",
+    "setup": "npm run update_submodules && npm i",
+    "build": "node ./utils/esbuild.js"
   },
   "author": "alex.sova@pm.me",
   "license": "MIT",
