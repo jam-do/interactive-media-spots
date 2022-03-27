@@ -1,6 +1,4 @@
-import {BaseComponent} from '../../submodules/symbiote/core/BaseComponent.js';
-
-import {PlayConfig} from '../../play-config.js';
+import { BaseComponent } from '../../submodules/symbiote/core/BaseComponent.js';
 
 export class PpCompare extends BaseComponent {
 
@@ -33,7 +31,7 @@ export class PpCompare extends BaseComponent {
   }
 
   /**
-   * @param {PlayConfig} cfg
+   * @param {*} cfg
    */
   set config(cfg) {
     this._loadImages(cfg.src);
