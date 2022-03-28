@@ -10,9 +10,12 @@ import { IconMkp } from '../../lib/ims-icon.js';
 import { HM_ICONS } from '../../lib/ims-iconset.js';
 IconMkp.addIcons(HM_ICONS);
 
-import { } from '../../lib/hmp-toolbar-el.js';
-import { } from '../../lib/hmp-progress-bar-el.js';
-import { } from '../../lib/hmp-info-bar-el.js';
+import { HmpToolbarEl } from '../../lib/hmp-toolbar-el.js';
+HmpToolbarEl.reg('hmp-toolbar-el');
+import { HmpProgressBarEl } from '../../lib/hmp-progress-bar-el.js';
+HmpProgressBarEl.reg('hmp-progress-bar-el');
+import { HmpInfoBarEl } from '../../lib/hmp-info-bar-el.js';
+HmpInfoBarEl.reg('hmp-info-bar-el');
 
 export class PhotoSpinner extends BaseComponent {
 
