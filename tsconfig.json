@@ -2,8 +2,8 @@
   "compilerOptions": {
     "pretty": true,
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "lib": [
         "es2017",
         "ESNext",
@@ -15,14 +15,17 @@
     "allowJs": true,
     "checkJs": true,
     "strict": false,
-    "alwaysStrict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": [],
+    "maxNodeModuleJsDepth": 3,
+    "types": [
+      "./types/",
+      "node"
+    ],
     "noEmit": true
   },
   "include": [
-    "**/*.js"
+    "**/*.js",
   ],
   "exclude": [
     "./web/*"

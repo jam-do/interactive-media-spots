@@ -1,37 +1,27 @@
-import { BaseComponent } from '../../submodules/symbiote/core/BaseComponent.js';
-import { UID } from '../../submodules/symbiote/utils/UID.js';
+import { AppCom, UID } from '../../lib/AppCom.js';
 import { ImageReader } from '../../lib/image-reader.js';
-import { TPL } from './template.js';
-import { HmpState } from '../../lib/ims-state.js';
+import { template, shadowCss } from './template.js';
 import { HmpFullscreen } from '../../lib/fullscreen.js';
-HmpFullscreen.init();
 
-import { IconMkp } from '../../lib/ims-icon.js';
+import { ImsIcon } from '../../lib/ims-icon.js';
 import { HM_ICONS } from '../../lib/ims-iconset.js';
-IconMkp.addIcons(HM_ICONS);
+ImsIcon.addIcons(HM_ICONS);
 
-import { HmpToolbarEl } from '../../lib/hmp-toolbar-el.js';
-HmpToolbarEl.reg('hmp-toolbar-el');
-import { HmpProgressBarEl } from '../../lib/hmp-progress-bar-el.js';
-HmpProgressBarEl.reg('hmp-progress-bar-el');
-import { HmpInfoBarEl } from '../../lib/hmp-info-bar-el.js';
-HmpInfoBarEl.reg('hmp-info-bar-el');
+import { } from '../../lib/hmp-toolbar.js';
+import { } from '../../lib/hmp-progress-bar.js';
+import { } from '../../lib/hmp-info-bar.js';
 
-export class PhotoSpinner extends BaseComponent {
-
-  renderShadow = true;
+export class PhotoSpinner extends AppCom {
 
   init$ = {
     data: '',
+    infoActive: false,
+    fullscreen: false,
   }
 
   constructor() {
     super();
-    this[HmpState.key] = HmpState.register(this);
-    this[HmpState.key].sub('fullscreen', (val) => {
-      val ? HmpFullscreen.enable(this) : HmpFullscreen.disable();
-    });
-    this.parent = null;
+  
     this._imgArray = [];
     this._imageReader = new ImageReader();
     this._isEdge = navigator.appVersion.indexOf('Edge') !== -1;
@@ -164,10 +154,10 @@ export class PhotoSpinner extends BaseComponent {
     }
     this._psFlagLoc = val;
     if (val) {
-      this._playStatusBtn.setAttribute('icon', 'pause');
+      this._playStatusBtn.$.icon = 'pause';
       this.setAttribute('active', '');
     } else {
-      this._playStatusBtn.setAttribute('icon', 'play');
+      this._playStatusBtn.$.icon = 'play';
     }
   }
 
@@ -246,6 +236,12 @@ export class PhotoSpinner extends BaseComponent {
   }
 
   initCallback() {
+
+    HmpFullscreen.init();
+    this.sub('fullscreen', (val) => {
+      val ? HmpFullscreen.enable(this) : HmpFullscreen.disable();
+    }, false);
+
     this.sub('data', (cfgSrc) => {
       if (!cfgSrc) {
         return;
@@ -432,12 +428,18 @@ export class PhotoSpinner extends BaseComponent {
 
   destroyCallback() {
     this.kill();
-    this[HmpState.key].remove();
   }
 }
 PhotoSpinner.bindAttributes({
   data: 'data',
 });
 
-PhotoSpinner.template = TPL;
+PhotoSpinner.shadowStyles = shadowCss;
+PhotoSpinner.template = template;
 PhotoSpinner.reg('ims-photo-spinner');
+
+export * from '../../lib/hmp-button.js';
+export * from '../../lib/hmp-info-bar.js';
+export * from '../../lib/hmp-progress-bar.js';
+export * from '../../lib/ims-icon.js';
+export * from '../../lib/hmp-toolbar.js';

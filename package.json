@@ -1,6 +1,6 @@
 {
   "name": "@jam-do/ims",
-  "version": "0.0.4",
+  "version": "1.0.1",
   "description": "Interactive Media Spots",
   "main": "index.js",
   "type": "module",
@@ -16,6 +16,7 @@
     "README.md",
     "LICENSE"
   ],
+  "types": "./types/",
   "publishConfig": {
     "access": "public"
   },
@@ -29,7 +30,11 @@
   "author": "alex.sova@pm.me",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.9.0",
     "esbuild": "^0.14.28",
-    "typescript": "^4.6.3"
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@symbiotejs/symbiote": "^2.0.0-alpha.16"
   }
 }
