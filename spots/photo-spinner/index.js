@@ -7,10 +7,11 @@ import { ImsIcon } from '../../lib/ims-icon.js';
 import { HM_ICONS } from '../../lib/ims-iconset.js';
 ImsIcon.addIcons(HM_ICONS);
 
-import { } from '../../lib/hmp-toolbar.js';
-import { } from '../../lib/hmp-progress-bar.js';
-import { } from '../../lib/hmp-info-bar.js';
-
+export * from '../../lib/hmp-button.js';
+export * from '../../lib/hmp-info-bar.js';
+export * from '../../lib/hmp-progress-bar.js';
+export * from '../../lib/ims-icon.js';
+export * from '../../lib/hmp-toolbar.js';
 export class PhotoSpinner extends AppCom {
 
   init$ = {
@@ -438,8 +439,3 @@ PhotoSpinner.shadowStyles = shadowCss;
 PhotoSpinner.template = template;
 PhotoSpinner.reg('ims-photo-spinner');
 
-export * from '../../lib/hmp-button.js';
-export * from '../../lib/hmp-info-bar.js';
-export * from '../../lib/hmp-progress-bar.js';
-export * from '../../lib/ims-icon.js';
-export * from '../../lib/hmp-toolbar.js';
