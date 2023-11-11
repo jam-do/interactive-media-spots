@@ -65,7 +65,7 @@ export class PhotoSpinner extends AppCom {
     this._directionStep = cfg.invertDirection ? -1 : 1;
 
     if (!cfg.showPlaceholder) {
-      this._loadContents(cfg);
+      this._loadContents(cfg, true);
       this.setAttribute('active', '');
     } else {
       this._showPreview();
@@ -76,8 +76,14 @@ export class PhotoSpinner extends AppCom {
     this._progressBar.progress = val;
   }
 
-  _loadContents(cfg) {
-    if (this._imgLoadingInitialized && !this.preview) {
+  /**
+   * 
+   * @param {*} cfg 
+   * @param {Boolean} force 
+   * @returns 
+   */
+  _loadContents(cfg, force = false) {
+    if (this._imgLoadingInitialized && !this.preview && !force) {
       return;
     }
     // TODO: switch to firestore id
