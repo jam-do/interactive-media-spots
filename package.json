@@ -1,6 +1,6 @@
 {
   "name": "@jam-do/ims",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Interactive Media Spots",
   "main": "index.js",
   "type": "module",

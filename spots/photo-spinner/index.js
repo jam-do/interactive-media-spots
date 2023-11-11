@@ -29,16 +29,14 @@ export class PhotoSpinner extends AppCom {
   }
 
   get cfg() {
-    return this['config'];
+    return this._cfg;
   }
 
   _setConfig(cfg) {
     if (!cfg) {
       return;
     }
-    if (!this['config']) {
-      this['config'] = cfg;
-    }
+    this._cfg = cfg;
     this._imgHeight = cfg.imgHeight || 480;
     this._imgWidth = cfg.imgWidth || 640;
 
